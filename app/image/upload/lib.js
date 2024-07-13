@@ -51,4 +51,5 @@ export async function encrypt(derivedKey, text) {
     const ciphertext = btoa(String.fromCharCode.apply(null, new Uint8Array(ciphertextBuffer)));
     const ivString = btoa(String.fromCharCode.apply(null, iv));
     return `${ciphertext}.${ivString}`;
+    
 }
