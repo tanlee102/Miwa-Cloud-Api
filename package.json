@@ -13,6 +13,7 @@
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "google-auth-library": "^9.11.0",
+    "googleapis": "^140.0.1",
     "i": "^0.3.7",
     "jsonwebtoken": "^9.0.2",
     "next": "14.2.4",
