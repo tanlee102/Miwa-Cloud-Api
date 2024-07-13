@@ -2,6 +2,7 @@ import { google } from 'googleapis';
 import { NextResponse } from 'next/server'
 import { Readable } from 'stream';
 import { getStore } from "@netlify/blobs";
+import { headers } from 'next/headers';
 
 export async function PUT(request, context) {
 
@@ -55,6 +56,18 @@ export async function PUT(request, context) {
                     requestBody: {
                         role: 'reader',
                         type: 'anyone'
+                    }
+                });
+
+                const headersList = headers();
+                const token = String(headersList.get('authorization')).replace('Bearer ', '');
+
+                const API_URL = 'http://localhost:8080/api/v1/users/thumbnail/update'; // Replace with your actual backend API endpoint
+                const response = await axios.post(API_URL, {
+                    "profileImageUrl": fileId,
+                }, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
                     }
                 });
             }
