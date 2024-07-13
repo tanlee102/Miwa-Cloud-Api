@@ -15,6 +15,11 @@ export async function middleware(request) {
         return NextResponse.json({}, { headers: corsOptions })
     }
 
+
+    if(request.method === 'PUT' || request.method === 'POST' || request.method === 'DELETE'){
+        response.headers.set("Content-Type", "application/json");
+    }
+
     const response = NextResponse.next();
     Object.entries(corsOptions).forEach(([key, value]) => {
         response.headers.set(key, value)
