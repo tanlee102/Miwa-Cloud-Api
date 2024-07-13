@@ -5,7 +5,17 @@ import { getStore } from "@netlify/blobs";
 import { headers } from 'next/headers';
 import axios from 'axios';
 
+export async function OPTIONS(request, context) {
+    return NextResponse.json({}, { status: 200, headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept, Accept-Version, Content-Length",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Credentials": "true",
+    }});
+}
+
 export async function PUT(request, context) {
+
 
     try {
 
@@ -64,7 +74,7 @@ export async function PUT(request, context) {
                 const token = String(headersList.get('authorization')).replace('Bearer ', '');
 
                 const API_URL = 'http://localhost:8080/api/v1/users/thumbnail/update'; // Replace with your actual backend API endpoint
-                const response = await axios.post(API_URL, {
+                await axios.post(API_URL, {
                     "profileImageUrl": fileId,
                 }, {
                     headers: {
@@ -74,7 +84,12 @@ export async function PUT(request, context) {
             }
         }
 
-        return NextResponse.json(response.data, { status: 200 });
+        return NextResponse.json(response.data, { status: 200, headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept, Accept-Version, Content-Length",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Credentials": "true",
+        }});
 
     } catch (error) {
         return NextResponse.json({ error: error.message }, { status: 400 });
