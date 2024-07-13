@@ -10,14 +10,14 @@ export async function PUT(request, context) {
         const oauth2Client = new google.auth.OAuth2(
             process.env.CLIENT_ID, 
             process.env.CLIENT_SECRET, 
-            'http://localhost:80'
+            'http://localhost:80' 
         );
         oauth2Client.setCredentials({
-            refresh_token: process.env.REFRESH_TOKEN
+            refresh_token: process.env.REFRESH_TOKEN 
         });
         const drive = google.drive({
-            version: 'v3',
-            auth: oauth2Client
+            version: 'v3', 
+            auth: oauth2Client 
         });
         
         const formData = await request.formData();
