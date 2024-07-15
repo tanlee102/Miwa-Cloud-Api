@@ -55,4 +55,5 @@ export async function POST(request) {
   } catch (error) {
     return NextResponse.json({ error: 'Error handling callback.' }, { status: 400 });
   }
+  
 }
