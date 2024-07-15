@@ -69,18 +69,6 @@ export async function PUT(request, context) {
                         type: 'anyone'
                     }
                 });
-
-                const headersList = headers();
-                const token = String(headersList.get('authorization')).replace('Bearer ', '');
-
-                const API_URL = 'http://localhost:8080/api/v1/users/thumbnail/update'; // Replace with your actual backend API endpoint
-                await axios.post(API_URL, {
-                    "profileImageUrl": fileId,
-                }, {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
             }
         }
 
