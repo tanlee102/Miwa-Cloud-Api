@@ -52,6 +52,7 @@ export async function GET(request) {
       return redirectResponse;
     
     } catch (error) {
+        console.log(error);
         return new NextResponse('Invalid token', { status: 401 });
     }
 
