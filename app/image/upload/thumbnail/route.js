@@ -43,10 +43,10 @@ export async function PUT(request, context) {
     
         const response = await drive.files.create({
             requestBody: {
-                name: image.name,
+                name: "thumbnail.jpeg",
             },
             media: {
-                mimeType: image.type,
+                mimeType: "image/jpeg",
                 body: imageStream,
             },
         });
@@ -80,6 +80,7 @@ export async function PUT(request, context) {
         }});
 
     } catch (error) {
+        console.log(error)
         return NextResponse.json({ error: error.message }, { status: 400 });
     }
 
