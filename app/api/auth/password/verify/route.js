@@ -33,8 +33,8 @@ export async function GET(request) {
                 }
             });
 
-              // Create a new response with a redirect
-      const redirectResponse = NextResponse.redirect('http://localhost:3001');
+      // Create a new response with a redirect
+      const redirectResponse = NextResponse.redirect('http://localhost:3001?token='+response.data.token);
 
       // Set the cookies in the redirect response
       const cookieOptions = {
