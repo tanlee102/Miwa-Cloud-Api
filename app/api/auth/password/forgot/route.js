@@ -23,7 +23,7 @@ export async function POST(request) {
 
       // Create JWT
       const token = jwt.sign({ email }, JWT_KEY, { expiresIn: '1h' });
-      const verificationLink = `http://localhost:3001/auth/setpassword?token=${token}&email=${email}`;
+      const verificationLink = `https://miwabox-cloud.netlify.app/auth/setpassword?token=${token}&email=${email}`;
 
       const htmlContent = `
           <html>
