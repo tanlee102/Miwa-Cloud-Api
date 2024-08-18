@@ -44,7 +44,7 @@ export async function GET(request) {
 
     if(userInfo?.email){
 
-      const API_URL = 'http://localhost:8080/api/v1/auth/third'; // Replace with your actual backend API endpoint
+      const API_URL = 'http://8.219.96.109/api/v1/auth/third'; // Replace with your actual backend API endpoint
       const API_KEY = process.env.API_KEY; // Replace with your actual API key
       const randomPassword = generateRandomPassword(13); // Generates an 13-character random password
 

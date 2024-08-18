@@ -14,7 +14,7 @@ export async function POST(request) {
     // Extract email and password from the body
     const { email, password } = body;
     const API_KEY = process.env.API_KEY; // Replace with your actual API key
-    const API_URL = 'http://localhost:8080/api/v1/auth/login'; // Replace with your actual backend API endpoint
+    const API_URL = 'http://8.219.96.109/api/v1/auth/login'; // Replace with your actual backend API endpoint
 
     const response = await axios.post(API_URL, {
             "email": email,

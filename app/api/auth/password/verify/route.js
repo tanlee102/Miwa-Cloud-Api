@@ -15,7 +15,7 @@ export async function GET(request) {
 
     const API_KEY = process.env.API_KEY; // Replace with your actual API key
     const JWT_KEY = process.env.JWT_SECRET; // Replace with your JWT secret
-    const API_URL = 'http://localhost:8080/api/v1/auth/register'; // Replace with your actual backend API endpoint
+    const API_URL = 'http://8.219.96.109/api/v1/auth/register'; // Replace with your actual backend API endpoint
 
     try {
 
