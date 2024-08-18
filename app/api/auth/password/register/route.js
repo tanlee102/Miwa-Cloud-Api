@@ -17,13 +17,13 @@ export async function POST(request) {
 
     const API_KEY = process.env.API_KEY; // Replace with your actual API key
     const JWT_KEY = process.env.JWT_SECRET; // Replace with your JWT secret
-    const API_URL = "http://localhost:3000/api/mail/send3";
+    const API_URL = "https://miwa-cloud-api.netlify.app/api/mail/send3";
 
     try {
 
       // Create JWT
       const token = jwt.sign({ email, password, username }, JWT_KEY, { expiresIn: '1h' });
-      const verificationLink = `http://localhost:3000/api/auth/password/verify?token=${token}`;
+      const verificationLink = `https://miwa-cloud-api.netlify.app/api/auth/password/verify?token=${token}`;
 
       const htmlContent = `
           <html>
