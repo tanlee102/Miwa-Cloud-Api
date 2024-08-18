@@ -18,6 +18,7 @@ export async function POST(request) {
     const API_KEY = process.env.API_KEY; // Replace with your actual API key
     const JWT_KEY = process.env.JWT_SECRET; // Replace with your JWT secret
     const API_URL = "https://miwa-cloud-api.netlify.app/api/mail/send3";
+    
 
     try {
 
