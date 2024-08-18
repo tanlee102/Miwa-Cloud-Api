@@ -85,7 +85,7 @@ export async function GET(request) {
       }
 
     }else{
-      return NextResponse.json({ error: 'Error getting user infomation.' }, { status: 400 });
+      return NextResponse.json({ error: error }, { status: 400 });
     }
 
   } catch (error) {
