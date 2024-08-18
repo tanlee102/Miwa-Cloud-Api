@@ -5,6 +5,7 @@ import { getStore } from "@netlify/blobs";
 import { headers } from 'next/headers';
 import axios from 'axios';
 
+
 export async function OPTIONS(request, context) {
     return NextResponse.json({}, { status: 200, headers: {
         "Access-Control-Allow-Origin": "*",
@@ -15,7 +16,6 @@ export async function OPTIONS(request, context) {
 }
 
 export async function PUT(request, context) {
-
 
     try {
 
