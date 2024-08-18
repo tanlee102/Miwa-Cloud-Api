@@ -81,7 +81,7 @@ export async function GET(request) {
         return redirectResponse;
 
       } catch (error) {
-        return NextResponse.json({ error: 'Registration failed' }, { status: error.response.status });
+        return NextResponse.json({ error: 'Registration failed' }, { status: error.response?.status });
       }
 
     }else{
@@ -90,7 +90,7 @@ export async function GET(request) {
 
   } catch (error) {
     console.error('Error handling callback:', error);
-    return NextResponse.json({ error: 'Error handling callback.' }, { status: 400 });
+    return NextResponse.json({ error: error }, { status: 400 });
 
   }
 }
